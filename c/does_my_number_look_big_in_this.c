@@ -24,13 +24,10 @@ bool narcissistic(int num)
 	char str[10];
 	sprintf(str, "%d", num);
 
-	char len = 0;
-	while (str[(int)len] != '\0') len++;
+	char len = log10(num) + 1;
 
-	int sum = 0;
-  
 	for (int i = 0; str[i] != '\0'; i++)
-		sum += pow(str[i] - NUM_ASCII_OFFSET, len);
+		num -= pow(str[i] - NUM_ASCII_OFFSET, len);
 
-	return sum == num;
+	return !num;
 }
