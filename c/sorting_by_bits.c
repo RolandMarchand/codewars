@@ -8,7 +8,7 @@ int bit_count(int value) {
 	return count;
 }
 
-int cmp_fn(const void *a, const void *b) {
+int cmp_fn(const void* a, const void *b) {
 	int b1 = bit_count(*(int*)a), b2 = bit_count(*(int*)b);
 	if (b1 == b2 && *(int*)a <= *(int*)b || b1 < b2) return -1;
 	return 1;
